@@ -8,6 +8,7 @@ fieldset {
   padding: 1%;
   width: 1100px;
   margin: auto;
+  margin-top: 10px;
 }
 legend {
   text-align: center;
