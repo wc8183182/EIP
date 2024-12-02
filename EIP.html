@@ -33,23 +33,23 @@
             <td class="left">假別</td>
             <td class="right">
               <select name="" id="">
-                <option value="">病假</option>
-                <option value="">事假</option>
-                <option value="">產假</option>
-                <option value="">陪產假</option>
-                <option value="">遠距工作</option>
-                <option value="">加班</option>
-                <option value="">喪假</option>
-                <option value="">生理假</option>
-                <option value="">公假</option>
-                <option value="">婚假</option>
-                <option value="">特休</option>
+                <option value="病假">病假</option>
+                <option value="事假">事假</option>
+                <option value="產假">產假</option>
+                <option value="陪產假">陪產假</option>
+                <option value="遠距工作">遠距工作</option>
+                <option value="加班">加班</option>
+                <option value="喪假">喪假</option>
+                <option value="生理假">生理假</option>
+                <option value="公假">公假</option>
+                <option value="婚假">婚假</option>
+                <option value="特休">特休</option>
                 <option selected="selected">請選擇假別</option>
               </select>
             </td>
           </tr>
 
-          <tr>
+          <tr class="line priorityRow" style="visibility: hidden">
             <td class="left">優先序</td>
             <td class="right">
               <select name="" id="">
@@ -154,8 +154,61 @@
             </td>
           </tr>
           <button>送出表單</button>
+
+          <tr class="agent">
+            <td class="left">代理人</td>
+            <td class="right">
+              <select name="" id="">
+                <option value="">翁聖凱</option>
+                <option value="">李宗翰</option>
+                <option value="">何宇翔</option>
+                <option value="">徐世杰</option>
+                <option value="">湯富宇</option>
+                <option value="">凃皓景</option>
+                <option value="">成天惠</option>
+                <option value="">吳奇燊</option>
+                <option value="">陳毅豪</option>
+                <option value="">黃祿芸</option>
+                <option value="">陳正信</option>
+                <option value="">徐嘉言</option>
+                <option value="">陳力卉</option>
+                <option value="">洪廷宇</option>
+                <option value="">葉純宇</option>
+                <option value="">何瑞昇</option>
+                <option value="">王庭恩</option>
+                <option value="">蕭逸芬</option>
+                <option value="">陳玟宇</option>
+                <option value="">張叔安</option>
+                <option value="">簡珮珊</option>
+                <option value="">張巧儒</option>
+                <option value="">張修豪</option>
+                <option value="">鄭淯心</option>
+                <option value="">林沛珊</option>
+                <option value="">李威辰</option>
+                <option value="">鄧仕良</option>
+                <option value="">許惟棠</option>
+                <option selected="selected">選擇代理人</option>
+              </select>
+            </td>
+          </tr>
+          <button>送出表單</button>
         </table>
       </div>
     </fieldset>
   </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const leaveTypeSelect = document.querySelector('select[name=""]'); // 假別選項
+      const priorityRow = document.querySelector(".priorityRow");
+
+      leaveTypeSelect.addEventListener("change", function () {
+        if (leaveTypeSelect.value === "加班") {
+          priorityRow.classList.add("visible"); // 顯示
+        } else {
+          priorityRow.classList.remove("visible"); // 隱藏
+        }
+      });
+    });
+  </script>
 </html>

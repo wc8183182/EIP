@@ -67,3 +67,14 @@ button {
   right: 50px;
   bottom: -5%;
 }
+.priorityRow {
+  visibility: hidden; /* 預設為隱藏 */
+  opacity: 0; /* 預設透明 */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  height: 0; /* 預防高度影響布局 */
+}
+.priorityRow.visible {
+  visibility: visible; /* 顯示 */
+  opacity: 1;
+  height: auto; /* 恢復原高度 */
+}
