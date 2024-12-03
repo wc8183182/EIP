@@ -200,6 +200,13 @@
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+    import {
+      getFirestore,
+      addDoc,
+      collection,
+      getDocs,
+      updateDoc,
+    } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -217,7 +224,36 @@
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
+    const firestore = getFirestore(app);
     const analytics = getAnalytics(app);
+
+    function getCollection(name) {
+      return collection(firestore, name);
+    }
+
+    async function addData() {
+      try {
+        const docRef = await addDoc(getCollection("Employees"), {
+          denny: {
+            entryDate: "2020-03-25",
+          },
+        });
+        console.log(docRef.id);
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    async function getEmployees() {
+      return await getDocs(getCollection("Employees"));
+    }
+
+    addData();
+    getEmployees().then((snapshuts) => {
+      snapshuts.forEach((snapshot) => {
+        console.log(snapshot.data());
+      });
+    });
   </script>
 
   <script>
