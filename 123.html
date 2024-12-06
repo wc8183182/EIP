@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EIP 系統</title>
+    <link rel="stylesheet" href="index.css" />
+    <!-- 外部 CSS 檔案 -->
+  </head>
+  <style>
+    /* styles.css */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .leave-balance,
+    .monthly-leaves,
+    .pending-approvals {
+      margin-bottom: 40px;
+    }
+
+    .circle-card {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #4caf50;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 1.5em;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .circle-card p {
+      font-size: 0.6em;
+      margin: 0;
+    }
+
+    .progress-bar {
+      margin-top: 10px;
+      height: 10px;
+      background: #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: #4caf50;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      word-wrap: break-word; /* 防止文字溢出 */
+    }
+
+    .status.pending {
+      color: orange;
+    }
+
+    .status.approved {
+      color: green;
+    }
+
+    button {
+      padding: 5px 10px;
+      margin: 0 5px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .approve-btn {
+      background: #4caf50;
+      color: white;
+    }
+
+    .reject-btn {
+      background: #f44336;
+      color: white;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <!-- 剩餘特休區 -->
+      <section class="leave-balance">
+        <h2>剩餘特休時數</h2>
+        <div class="circle-card">
+          <span>128</span>
+          <p>小時</p>
+        </div>
+      </section>
+
+      <!-- 當月請假狀況 -->
+      <section class="monthly-leaves">
+        <h2>當月請假狀況</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>姓名</th>
+              <th>請假類型</th>
+              <th>請假時間</th>
+              <th>代理人</th>
+              <th>狀態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>王小明</td>
+              <td>病假</td>
+              <td>12/05 09:00 - 12:00</td>
+              <td>李美麗</td>
+              <td class="status pending">待審核</td>
+            </tr>
+            <tr>
+              <td>李美麗</td>
+              <td>特休</td>
+              <td>12/06 14:00 - 18:00</td>
+              <td>王小明</td>
+              <td class="status approved">已同意</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="pending-approvals">
+        <h2>未審核代理請假</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>請假人</th>
+              <th>代理人</th>
+              <th>請假時間</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>王小明</td>
+              <td>李美麗</td>
+              <td>12/05 09:00 - 12:00</td>
+              <td>
+                <button class="approve-btn">同意</button>
+                <button class="reject-btn">拒絕</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>

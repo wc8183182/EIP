@@ -1,80 +1,118 @@
+/* 通用設定 */
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
-  font-size: 20px;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
-fieldset {
-  padding: 1%;
-  width: 1100px;
-  margin: auto;
+body {
+  background-color: #f8f9fa;
+  color: #495057;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* 標題區 */
+
+.PTO {
+  width: 100%;
+  text-align: left;
+}
+.PTO table {
+  width: 100%;
+  color: #000;
+  border-collapse: collapse; /*取消表格之間間距*/
+}
+
+.PTO th {
+  font-size: 19px;
+  background-color: #f1f3f5;
+}
+
+.PTO th,
+td {
+  border: #ced4da 1px solid;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #343a40;
+}
+
+/* 表單樣式 */
+
+.form-group {
+  margin-top: 30px;
+}
+.leave-form .form-group {
+  margin-bottom: 20px;
+}
+.leave-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.leave-form input,
+.leave-form select,
+.leave-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+.leave-form input:focus,
+.leave-form select:focus,
+.leave-form textarea:focus {
+  border-color: #80bdff;
+  outline: none;
+}
+
+/* 表單按鈕 */
+.submit-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: 20px auto 0;
+  transition: background-color 0.3s ease;
+}
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* 表格樣式 */
+.balance-section table {
+  width: 100%;
+  border-collapse: collapse;
   margin-top: 10px;
 }
-legend {
-  text-align: center;
-  background-color: #000;
-  color: #fff;
-  padding: 0 20px;
-  font-size: 25px;
+.balance-section th,
+.balance-section td {
+  text-align: left;
+  padding: 12px 15px;
+  border: 1px solid #dee2e6;
 }
-
-.wapper {
-  width: 1068px;
-  margin: 0 auto;
-  /* border: blue 1px solid; */
-  position: relative;
+.balance-section th {
+  background-color: #f1f3f5;
+  color: #495057;
 }
-
-table {
-  width: 100%;
-  /* border: 1px solid red; */
-}
-tr {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.title {
-  background-color: #efefef;
-}
-
-.th1,
-.td1 {
-  border: #000 1px solid;
-  width: 33.333%;
-  text-align: center;
-}
-
-.line {
-  padding: 0.1%;
-}
-.left {
-  width: 33.333%;
-  /* border: #000 1px solid; */
-}
-
-.right {
-  /* border: #000 1px solid; */
-  width: calc(100% - 33.333%);
-}
-
-textarea {
-  font-size: 20px;
-}
-
-button {
-  position: absolute;
-  right: 50px;
-  bottom: -5%;
-}
-.priorityRow {
-  visibility: hidden; /* 預設為隱藏 */
-  opacity: 0; /* 預設透明 */
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  height: 0; /* 預防高度影響布局 */
-}
-.priorityRow.visible {
-  visibility: visible; /* 顯示 */
-  opacity: 1;
-  height: auto; /* 恢復原高度 */
+.balance-section tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
 }

@@ -4,12 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
-    <title>Document</title>
+    <title>首頁</title>
   </head>
   <body>
-    <div class="login-container">
-      <h1>歡迎登入</h1>
-      <button class="login-btn">google 登入</button>
+    <div class="container">
+      <section class="PTO">
+        <h2>剩餘特休時數</h2>
+        <div class="circle-card">
+          <span>128</span>
+          <p>小時</p>
+        </div>
+      </section>
+
+      <!-- 當月請假狀況 -->
+      <section class="moon-vacation">
+        <h2>當月請假狀況</h2>
+        <table>
+          <thead>
+            <tr class="table-title">
+              <th>姓名</th>
+              <th>請假類型</th>
+              <th>請假時間</th>
+              <th>時數</th>
+              <th>代理人</th>
+              <th>狀態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>翁聖凱</td>
+              <td>特休</td>
+              <td>12/05 09:00 - 12:00</td>
+              <td>3小時</td>
+              <td>李宗翰</td>
+              <td class="status-pending">待審核</td>
+            </tr>
+
+            <tr>
+              <td>李宗翰</td>
+              <td>特休</td>
+              <td>12/06 09:00 - 12:00</td>
+              <td>3小時</td>
+              <td>翁聖凱</td>
+              <td class="status-approved">已同意</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="pending-approvals">
+        <h2>未審核代理階段</h2>
+        <table>
+          <thead>
+            <tr class="table-title">
+              <th>請假人</th>
+              <th>代理人</th>
+              <th>請假時間</th>
+              <th>時數</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>徐世杰</td>
+              <td>徐嘉言</td>
+              <td>12/05 09:00 - 12:00</td>
+              <td>3小時</td>
+              <td>
+                <button class="agreen-btn">同意</button>
+                <button class="reject-btn">拒絕</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </div>
   </body>
 </html>

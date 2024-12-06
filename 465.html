@@ -6,25 +6,130 @@
     <link rel="stylesheet" href="EIP.css" />
     <title>請假單</title>
   </head>
+  <style>
+    /* 通用設定 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f8f9fa;
+      color: #495057;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    /* 標題區 */
+    legend {
+      background-color: #343a40;
+      color: #fff;
+      font-size: 24px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #343a40;
+    }
+
+    /* 表單樣式 */
+    .leave-form .form-group {
+      margin-bottom: 20px;
+    }
+    .leave-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    .leave-form input,
+    .leave-form select,
+    .leave-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+    .leave-form input:focus,
+    .leave-form select:focus,
+    .leave-form textarea:focus {
+      border-color: #80bdff;
+      outline: none;
+    }
+    .hidden {
+      display: none;
+    }
+
+    /* 表單按鈕 */
+    .submit-btn {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin: 20px auto 0;
+      transition: background-color 0.3s ease;
+    }
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* 表格樣式 */
+    .balance-section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .balance-section th,
+    .balance-section td {
+      text-align: left;
+      padding: 12px 15px;
+      border: 1px solid #dee2e6;
+    }
+    .balance-section th {
+      background-color: #f1f3f5;
+      color: #495057;
+    }
+    .balance-section tbody tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+  </style>
   <body>
     <div class="container">
       <fieldset>
         <legend>請假單</legend>
         <div class="wrapper">
-          <section class="PTO">
-            <h2>特休剩餘時數</h2>
+          <section class="balance-section">
+            <h2>剩餘假期狀況</h2>
             <table>
               <thead>
                 <tr>
                   <th>假別</th>
-                  <th>剩餘時數</th>
+                  <th>剩餘天數</th>
                   <th>到期日</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>特休</td>
-                  <td>128</td>
+                  <td>10</td>
                   <td>2025-12-31</td>
                 </tr>
               </tbody>
@@ -42,27 +147,17 @@
               <select id="leaveType">
                 <option value="病假">病假</option>
                 <option value="事假">事假</option>
-                <option value="產假">產假</option>
-                <option value="陪產假">陪產假</option>
-                <option value="遠距工作">遠距工作</option>
-                <option value="加班">加班</option>
-                <option value="喪假">喪假</option>
-                <option value="生理假">生理假</option>
-                <option value="公假">公假</option>
-                <option value="婚假">婚假</option>
                 <option value="特休">特休</option>
-                <option value="請選擇假別" selected="select">請選擇假別</option>
+                <option value="加班">加班</option>
               </select>
             </div>
 
-            <div class="form-group" id="priorityRow">
+            <div class="form-group hidden" id="priorityRow">
               <label for="priority">優先序</label>
               <select id="priority">
                 <option value="1">1. 線上災難/狀況</option>
                 <option value="2">2. 插件</option>
                 <option value="3">3. 日常</option>
-                <option value="4">4. 補時數</option>
-                <option value="5">5. 創意性質</option>
               </select>
             </div>
 
