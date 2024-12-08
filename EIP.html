@@ -10,95 +10,140 @@
     <div class="container">
       <fieldset>
         <legend>請假單</legend>
-        <div class="wrapper">
-          <section class="PTO">
-            <h2>特休剩餘時數</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>假別</th>
-                  <th>剩餘時數</th>
-                  <th>到期日</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>特休</td>
-                  <td>128</td>
-                  <td>2025-12-31</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+        <section class="PTO">
+          <h2>特休剩餘時數</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>假別</th>
+                <th>剩餘時數</th>
+                <th>到期日</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>特休</td>
+                <td>128</td>
+                <td>2025-12-31</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-          <form class="leave-form">
-            <div class="form-group">
-              <label for="name">姓名</label>
-              <input type="text" id="name" placeholder="請輸入姓名" />
-            </div>
+        <form class="leave-form">
+          <div class="form-group">
+            <label for="name">姓名</label>
+            <input type="text" id="name" placeholder="請輸入姓名" />
+          </div>
 
-            <div class="form-group">
-              <label for="leaveType">假別</label>
-              <select id="leaveType">
-                <option value="病假">病假</option>
-                <option value="事假">事假</option>
-                <option value="產假">產假</option>
-                <option value="陪產假">陪產假</option>
-                <option value="遠距工作">遠距工作</option>
-                <option value="加班">加班</option>
-                <option value="喪假">喪假</option>
-                <option value="生理假">生理假</option>
-                <option value="公假">公假</option>
-                <option value="婚假">婚假</option>
-                <option value="特休">特休</option>
-                <option value="請選擇假別" selected="select">請選擇假別</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <label for="leaveType">假別</label>
+            <select id="leaveType">
+              <option value="病假">病假</option>
+              <option value="事假">事假</option>
+              <option value="產假">產假</option>
+              <option value="陪產假">陪產假</option>
+              <option value="遠距工作">遠距工作</option>
+              <option value="加班">加班</option>
+              <option value="喪假">喪假</option>
+              <option value="生理假">生理假</option>
+              <option value="公假">公假</option>
+              <option value="婚假">婚假</option>
+              <option value="特休">特休</option>
+              <option value="請選擇假別" selected="select">請選擇假別</option>
+            </select>
+          </div>
 
-            <div class="form-group" id="priorityRow">
-              <label for="priority">優先序</label>
-              <select id="priority">
-                <option value="1">1. 線上災難/狀況</option>
-                <option value="2">2. 插件</option>
-                <option value="3">3. 日常</option>
-                <option value="4">4. 補時數</option>
-                <option value="5">5. 創意性質</option>
-              </select>
-            </div>
+          <div class="form-group" id="priorityRow">
+            <label for="priority">優先序</label>
+            <select id="priority">
+              <option value="線上災難/狀況">線上災難/狀況</option>
+              <option value="插件">插件</option>
+              <option value="日常">日常</option>
+              <option value="補時數">補時數</option>
+              <option value="創意性質">創意性質</option>
+            </select>
+          </div>
 
-            <div class="form-group">
-              <label for="startDate">請假開始時間</label>
-              <input type="date" id="startDate" />
-              <input type="time" id="startTime" />
-            </div>
+          <div class="form-group">
+            <label for="startDate">請假開始時間</label>
+            <input type="date" id="startDate" />
+            <input type="time" id="startTime" />
+          </div>
 
-            <div class="form-group">
-              <label for="endDate">請假結束時間</label>
-              <input type="date" id="endDate" />
-              <input type="time" id="endTime" />
-            </div>
+          <div class="form-group">
+            <label for="endDate">請假結束時間</label>
+            <input type="date" id="endDate" />
+            <input type="time" id="endTime" />
+          </div>
 
-            <div class="form-group">
-              <label for="reason">請假原因</label>
-              <textarea
-                id="reason"
-                rows="3"
-                placeholder="請輸入請假原因"
-              ></textarea>
-            </div>
+          <div class="form-group">
+            <label for="reason">請假原因</label>
+            <textarea rows="3" placeholder="請輸入請假原因"></textarea>
+          </div>
 
-            <div class="form-group">
-              <label for="agent">代理人</label>
-              <select id="agent">
-                <option value="">選擇代理人</option>
-                <option value="翁聖凱">翁聖凱</option>
-                <option value="李宗翰">李宗翰</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <label for="agent">代理人</label>
+            <select>
+              <option value="">選擇職能</option>
+              <option value="翁聖凱">翁聖凱</option>
+              <option value="後端">後端</option>
+              <option value="前端">前端</option>
+              <option value="維運">維運</option>
+              <option value="DBA">DBA</option>
+              <option value="QA">QA</option>
+              <option value="PM">PM</option>
+            </select>
+          </div>
+          <div class="agent-person">
+            <select>
+              <option value="">李宗翰</option>
+              <option value="">吳奇燊</option>
+              <option value="">陳毅豪</option>
+              <option value="">陳正信</option>
+              <option value="">洪廷宇</option>
+              <option value="">葉純宇</option>
+            </select>
 
-            <button type="submit" class="submit-btn">送出表單</button>
-          </form>
-        </div>
+            <select>
+              <option value="">湯富宇</option>
+              <option value="">黃祿芸</option>
+              <option value="">黃郁綺</option>
+              <option value="">陳力卉</option>
+              <option value="">林沛珊</option>
+            </select>
+
+            <select>
+              <option value="">徐世杰</option>
+              <option value="">凃皓景</option>
+              <option value="">徐嘉言</option>
+              <option value="">何叡昇</option>
+              <option value="">張叔安</option>
+              <option value="">張修豪</option>
+              <option value="">鄭淯心</option>
+              <option value="">陳凱翔</option>
+              <option value="">李威辰</option>
+            </select>
+
+            <select>
+              <option value="">王庭恩</option>
+              <option value="">簡珮珊</option>
+              <option value="">鄧仕良</option>
+            </select>
+
+            <select>
+              <option value="">何宇翔</option>
+              <option value="">成天惠</option>
+              <option value="">蕭逸芬</option>
+            </select>
+
+            <select>
+              <option value="">許惟棠</option>
+              <option value="">張巧儒</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn">送出表單</button>
+        </form>
       </fieldset>
     </div>
     <script src="EIP.js"></script>

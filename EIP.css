@@ -17,8 +17,7 @@ body {
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  padding: 20px;
+  padding: 30px;
 }
 
 /* 標題區 */
@@ -26,6 +25,7 @@ body {
 .PTO {
   width: 100%;
   text-align: left;
+  padding: 20px;
 }
 .PTO table {
   width: 100%;
@@ -53,26 +53,31 @@ h2 {
 /* 表單樣式 */
 
 .form-group {
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
-.leave-form .form-group {
-  margin-bottom: 20px;
+.leave-form {
+  padding: 20px;
 }
+
 .leave-form label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
 }
+
 .leave-form input,
 .leave-form select,
 .leave-form textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
   font-size: 16px;
+  border: 1px solid #ced4da;
+  margin-bottom: 5px;
+  border-radius: 5px;
   transition: border-color 0.3s ease;
 }
+
 .leave-form input:focus,
 .leave-form select:focus,
 .leave-form textarea:focus {
@@ -90,29 +95,9 @@ h2 {
   cursor: pointer;
   font-size: 16px;
   display: block;
-  margin: 20px auto 0;
+  margin: 20px auto 0px;
   transition: background-color 0.3s ease;
 }
 .submit-btn:hover {
   background-color: #0056b3;
-}
-
-/* 表格樣式 */
-.balance-section table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-.balance-section th,
-.balance-section td {
-  text-align: left;
-  padding: 12px 15px;
-  border: 1px solid #dee2e6;
-}
-.balance-section th {
-  background-color: #f1f3f5;
-  color: #495057;
-}
-.balance-section tbody tr:nth-child(even) {
-  background-color: #f8f9fa;
 }
