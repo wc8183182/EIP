@@ -84,7 +84,7 @@
 
           <div class="form-group">
             <label for="agent">代理人</label>
-            <select>
+            <select id="agent">
               <option value="">選擇職能</option>
               <option value="翁聖凱">翁聖凱</option>
               <option value="後端">後端</option>
@@ -94,58 +94,104 @@
               <option value="QA">QA</option>
               <option value="PM">PM</option>
             </select>
+
+            <div class="agent-person">
+              <select id="BE">
+                <option value="">李宗翰</option>
+                <option value="">吳奇燊</option>
+                <option value="">陳毅豪</option>
+                <option value="">陳正信</option>
+                <option value="">洪廷宇</option>
+                <option value="">葉純宇</option>
+              </select>
+
+              <select id="FE">
+                <option value="">湯富宇</option>
+                <option value="">黃祿芸</option>
+                <option value="">黃郁綺</option>
+                <option value="">陳力卉</option>
+                <option value="">林沛珊</option>
+              </select>
+
+              <select id="INFRA">
+                <option value="">徐世杰</option>
+                <option value="">凃皓景</option>
+                <option value="">徐嘉言</option>
+                <option value="">何叡昇</option>
+                <option value="">張叔安</option>
+                <option value="">張修豪</option>
+                <option value="">鄭淯心</option>
+                <option value="">陳凱翔</option>
+                <option value="">李威辰</option>
+              </select>
+
+              <select id="DBA">
+                <option value="">王庭恩</option>
+                <option value="">簡珮珊</option>
+                <option value="">鄧仕良</option>
+              </select>
+
+              <select id="QA">
+                <option value="">何宇翔</option>
+                <option value="">成天惠</option>
+                <option value="">蕭逸芬</option>
+              </select>
+
+              <select id="PM">
+                <option value="">許惟棠</option>
+                <option value="">張巧儒</option>
+              </select>
+            </div>
           </div>
-          <div class="agent-person">
-            <select>
-              <option value="">李宗翰</option>
-              <option value="">吳奇燊</option>
-              <option value="">陳毅豪</option>
-              <option value="">陳正信</option>
-              <option value="">洪廷宇</option>
-              <option value="">葉純宇</option>
-            </select>
 
-            <select>
-              <option value="">湯富宇</option>
-              <option value="">黃祿芸</option>
-              <option value="">黃郁綺</option>
-              <option value="">陳力卉</option>
-              <option value="">林沛珊</option>
-            </select>
-
-            <select>
-              <option value="">徐世杰</option>
-              <option value="">凃皓景</option>
-              <option value="">徐嘉言</option>
-              <option value="">何叡昇</option>
-              <option value="">張叔安</option>
-              <option value="">張修豪</option>
-              <option value="">鄭淯心</option>
-              <option value="">陳凱翔</option>
-              <option value="">李威辰</option>
-            </select>
-
-            <select>
-              <option value="">王庭恩</option>
-              <option value="">簡珮珊</option>
-              <option value="">鄧仕良</option>
-            </select>
-
-            <select>
-              <option value="">何宇翔</option>
-              <option value="">成天惠</option>
-              <option value="">蕭逸芬</option>
-            </select>
-
-            <select>
-              <option value="">許惟棠</option>
-              <option value="">張巧儒</option>
-            </select>
-          </div>
           <button type="submit" class="submit-btn">送出表單</button>
         </form>
       </fieldset>
     </div>
-    <script src="EIP.js"></script>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const leaveType = document.getElementById("leaveType");
+      const priorityRow = document.getElementById("priorityRow");
+
+      // 初始化：默认隐藏优先序
+      priorityRow.style.display = "none";
+
+      // 监听假别选择
+      leaveType.addEventListener("change", () => {
+        if (leaveType.value === "加班") {
+          priorityRow.style.display = "block"; // 显示优先序
+        } else {
+          priorityRow.style.display = "none"; // 隐藏优先序
+        }
+      });
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      const agent = document.getElementById("agent");
+
+      // 获取所有代理人元素
+      const agentPersons = ["BE", "FE", "INFRA", "DBA", "PM", "QA"].map((id) =>
+        document.getElementById(id)
+      );
+
+      // 初始化：隐藏所有代理人
+      agentPersons.forEach((person) => {
+        person.style.display = "none";
+      });
+
+      // 监听下拉菜单变化
+      agent.addEventListener("change", () => {
+        const selectedValue = agent.value; // 获取当前选中的值
+
+        // 遍历所有代理人元素，匹配的显示，不匹配的隐藏
+        agentPersons.forEach((person) => {
+          if (person.id === selectedValue) {
+            person.style.display = "block"; // 显示匹配的元素
+          } else {
+            person.style.display = "none"; // 隐藏不匹配的元素
+          }
+        });
+      });
+    });
+  </script>
 </html>

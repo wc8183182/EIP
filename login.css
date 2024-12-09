@@ -23,6 +23,19 @@ body {
   font-size: 16px;
 }
 
+.login-container label {
+  display: block;
+  text-align: left;
+  font-size: 18px;
+}
+.login-container input {
+  display: block;
+  font-size: 16px;
+}
+
+.account {
+  margin-bottom: 5px;
+}
 .login-btn {
   padding: 10px 20px;
   font-size: 16px;

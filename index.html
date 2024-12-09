@@ -8,6 +8,15 @@
   </head>
   <body>
     <div class="container">
+      <!-- 顯示使用者信息 -->
+      <div class="user-info">
+        <p>
+          歡迎，
+          <span id="Username"></span>
+        </p>
+        <button id="logoutButton">登出</button>
+      </div>
+
       <section class="PTO">
         <h2>剩餘特休時數</h2>
         <div class="circle-card">
@@ -80,5 +89,20 @@
         </table>
       </section>
     </div>
+
+    <script>
+      const Username = localStorage.getItem("Username");
+
+      if (!Username) {
+        window.location.href = "login.html";
+      } else {
+        document.getElementById("Username").textContent = Username;
+      }
+
+      document.getElementById("logoutButton").addEventListener("click", () => {
+        localStorage.removeItem("Username");
+        window.location.href = "login.html";
+      });
+    </script>
   </body>
 </html>

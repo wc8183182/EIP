@@ -9,7 +9,30 @@
   <body>
     <div class="login-container">
       <h1>歡迎登入</h1>
-      <button class="login-btn">google 登入</button>
+      <div class="account">
+        <label for="Email">Email</label>
+        <input type="text" id="email" placeholder="請輸入帳號" />
+      </div>
+
+      <div class="password">
+        <label for="password">密碼</label>
+        <input type="password" id="password" placeholder="請輸入密碼" />
+      </div>
+
+      <button class="login-btn" id="loginButton">登入</button>
     </div>
   </body>
+  <script>
+    document.getElementById("loginButton").addEventListener("click", () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (!email || !password) {
+        alert("請輸入有效Email");
+        return;
+      }
+      localStorage.setItem("Username", email);
+      window.location.href = "index.html";
+    });
+  </script>
 </html>
