@@ -37,11 +37,11 @@
           </div>
 
           <div class="form-group">
-            <label for="leaveType">假別</label>
-            <select id="leaveType">
-              <option value="病假">病假</option>
-              <option value="事假">事假</option>
-              <option value="產假">產假</option>
+            <label for="Time-Off">假別</label>
+            <select id="Time-Off">
+              <option value="sick">病假</option>
+              <option value="2">事假</option>
+              <option value="3">產假</option>
               <option value="陪產假">陪產假</option>
               <option value="遠距工作">遠距工作</option>
               <option value="加班">加班</option>
@@ -57,9 +57,9 @@
           <div class="form-group" id="priorityRow">
             <label for="priority">優先序</label>
             <select id="priority">
-              <option value="線上災難/狀況">線上災難/狀況</option>
+              <option value="未選擇">線上災難/狀況</option>
               <option value="插件">插件</option>
-              <option value="日常">日常</option>
+              <option value="急迫例行公事">急迫例行公事</option>
               <option value="補時數">補時數</option>
               <option value="創意性質">創意性質</option>
             </select>
@@ -79,119 +79,28 @@
 
           <div class="form-group">
             <label for="reason">請假原因</label>
-            <textarea rows="3" placeholder="請輸入請假原因"></textarea>
+            <textarea
+              rows="3"
+              placeholder="請輸入請假原因"
+              id="reason"
+            ></textarea>
           </div>
 
           <div class="form-group">
             <label for="agent">代理人</label>
-            <select id="agent">
-              <option value="">選擇職能</option>
-              <option value="翁聖凱">翁聖凱</option>
-              <option value="後端">後端</option>
-              <option value="前端">前端</option>
-              <option value="維運">維運</option>
-              <option value="DBA">DBA</option>
-              <option value="QA">QA</option>
-              <option value="PM">PM</option>
-            </select>
-
-            <div class="agent-person">
-              <select id="BE">
-                <option value="">李宗翰</option>
-                <option value="">吳奇燊</option>
-                <option value="">陳毅豪</option>
-                <option value="">陳正信</option>
-                <option value="">洪廷宇</option>
-                <option value="">葉純宇</option>
-              </select>
-
-              <select id="FE">
-                <option value="">湯富宇</option>
-                <option value="">黃祿芸</option>
-                <option value="">黃郁綺</option>
-                <option value="">陳力卉</option>
-                <option value="">林沛珊</option>
-              </select>
-
-              <select id="INFRA">
-                <option value="">徐世杰</option>
-                <option value="">凃皓景</option>
-                <option value="">徐嘉言</option>
-                <option value="">何叡昇</option>
-                <option value="">張叔安</option>
-                <option value="">張修豪</option>
-                <option value="">鄭淯心</option>
-                <option value="">陳凱翔</option>
-                <option value="">李威辰</option>
-              </select>
-
-              <select id="DBA">
-                <option value="">王庭恩</option>
-                <option value="">簡珮珊</option>
-                <option value="">鄧仕良</option>
-              </select>
-
-              <select id="QA">
-                <option value="">何宇翔</option>
-                <option value="">成天惠</option>
-                <option value="">蕭逸芬</option>
-              </select>
-
-              <select id="PM">
-                <option value="">許惟棠</option>
-                <option value="">張巧儒</option>
-              </select>
-            </div>
+            <input type="text" id="agent" placeholder="代理人姓名" />
           </div>
 
-          <button type="submit" class="submit-btn">送出表單</button>
+          <button type="button" class="submit-btn" id="submitBtn">
+            送出表單
+          </button>
+
+          <button type="button" class="submit-btn" id="submitBtn2">
+            送出表單
+          </button>
         </form>
       </fieldset>
     </div>
   </body>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const leaveType = document.getElementById("leaveType");
-      const priorityRow = document.getElementById("priorityRow");
-
-      // 初始化：默认隐藏优先序
-      priorityRow.style.display = "none";
-
-      // 监听假别选择
-      leaveType.addEventListener("change", () => {
-        if (leaveType.value === "加班") {
-          priorityRow.style.display = "block"; // 显示优先序
-        } else {
-          priorityRow.style.display = "none"; // 隐藏优先序
-        }
-      });
-    });
-    document.addEventListener("DOMContentLoaded", () => {
-      const agent = document.getElementById("agent");
-
-      // 获取所有代理人元素
-      const agentPersons = ["BE", "FE", "INFRA", "DBA", "PM", "QA"].map((id) =>
-        document.getElementById(id)
-      );
-
-      // 初始化：隐藏所有代理人
-      agentPersons.forEach((person) => {
-        person.style.display = "none";
-      });
-
-      // 监听下拉菜单变化
-      agent.addEventListener("change", () => {
-        const selectedValue = agent.value; // 获取当前选中的值
-
-        // 遍历所有代理人元素，匹配的显示，不匹配的隐藏
-        agentPersons.forEach((person) => {
-          if (person.id === selectedValue) {
-            person.style.display = "block"; // 显示匹配的元素
-          } else {
-            person.style.display = "none"; // 隐藏不匹配的元素
-          }
-        });
-      });
-    });
-  </script>
+  <script src="./EIP.js"></script>
 </html>

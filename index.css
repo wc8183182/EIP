@@ -16,6 +16,11 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.user-info {
+  display: flex;
+  justify-content: space-between;
+}
+
 .moon-vacation,
 .PTO,
 .pending-approvals {
