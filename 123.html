@@ -3,178 +3,181 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EIP 系統</title>
-    <link rel="stylesheet" href="index.css" />
-    <!-- 外部 CSS 檔案 -->
   </head>
-  <style>
-    /* styles.css */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .leave-balance,
-    .monthly-leaves,
-    .pending-approvals {
-      margin-bottom: 40px;
-    }
-
-    .circle-card {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: #4caf50;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      font-size: 1.5em;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .circle-card p {
-      font-size: 0.6em;
-      margin: 0;
-    }
-
-    .progress-bar {
-      margin-top: 10px;
-      height: 10px;
-      background: #ddd;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-
-    .progress {
-      height: 100%;
-      background: #4caf50;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-
-    th,
-    td {
-      text-align: left;
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-      word-wrap: break-word; /* 防止文字溢出 */
-    }
-
-    .status.pending {
-      color: orange;
-    }
-
-    .status.approved {
-      color: green;
-    }
-
-    button {
-      padding: 5px 10px;
-      margin: 0 5px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .approve-btn {
-      background: #4caf50;
-      color: white;
-    }
-
-    .reject-btn {
-      background: #f44336;
-      color: white;
-    }
-  </style>
-
   <body>
-    <div class="container">
-      <!-- 剩餘特休區 -->
-      <section class="leave-balance">
-        <h2>剩餘特休時數</h2>
-        <div class="circle-card">
-          <span>128</span>
-          <p>小時</p>
-        </div>
-      </section>
-
-      <!-- 當月請假狀況 -->
-      <section class="monthly-leaves">
-        <h2>當月請假狀況</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>姓名</th>
-              <th>請假類型</th>
-              <th>請假時間</th>
-              <th>代理人</th>
-              <th>狀態</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>王小明</td>
-              <td>病假</td>
-              <td>12/05 09:00 - 12:00</td>
-              <td>李美麗</td>
-              <td class="status pending">待審核</td>
-            </tr>
-            <tr>
-              <td>李美麗</td>
-              <td>特休</td>
-              <td>12/06 14:00 - 18:00</td>
-              <td>王小明</td>
-              <td class="status approved">已同意</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section class="pending-approvals">
-        <h2>未審核代理請假</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>請假人</th>
-              <th>代理人</th>
-              <th>請假時間</th>
-              <th>操作</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>王小明</td>
-              <td>李美麗</td>
-              <td>12/05 09:00 - 12:00</td>
-              <td>
-                <button class="approve-btn">同意</button>
-                <button class="reject-btn">拒絕</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+    <div>
+      <!-- QA1 -->
+      <h3>第一題</h3>
+      <label>價格</label>：
+      <input type="number" id="price" placeholder="请输入價格" />
+      <p>手續費 : 30</p>
+      <p>折扣 : 8折</p>
     </div>
+    <button id="submitBtn">計算金额</button>
+    <p id="result">元</p>
+
+    <!-- Q2 -->
+    <h3>第二題</h3>
+    <div>
+      <label>商品1價格</label>：
+      <input type="number" id="product1Price" />
+      <label>商品1数量</label>：
+      <input type="number" id="product1Quantity" />
+    </div>
+    <div>
+      <label>商品2價格</label>：
+      <input type="number" id="product2Price" />
+      <label>商品2数量</label>：
+      <input type="number" id="product2Quantity" />
+    </div>
+    <button id="submitBtn2">計算總金额</button>
+    <p id="result2"></p>
+
+    <!-- Q3 -->
+    <h3>第三題</h3>
+    <label>體重:</label>
+    <input type="text" id="weight3" />
+    <label>身高:</label>
+    <input type="text" id="hight3" />
+    <button id="submitBtn3">計算</button>
+    <p id="result3">BMI :</p>
+
+    <!-- Q4 -->
+    <div>
+      <h3>第四題</h3>
+      <label>食物支出</label>：
+      <input type="number" id="food" placeholder="食物支出" />
+      <label>交通支出</label>：
+      <input type="number" id="transport" placeholder="交通支出" />
+      <label>娛樂支出</label>：
+      <input type="number" id="play" placeholder="娛樂支出" />
+    </div>
+    <button id="submitBtn4">計算總支出</button>
+    <div id="result">總支出: 元</div>
+
+    <!-- Q5 -->
+    <h3>第五題</h3>
+    <div>
+      <label>形状</label>：
+      <select id="shape">
+        <option value="circle">圆形</option>
+        <option value="rectangle">正方形</option>
+        <option value="triangle">三角形</option>
+      </select>
+      <div id="circleInputs">
+        <label>半径</label>：
+        <input type="number" id="radius" placeholder="請输入半径" />
+      </div>
+      <div id="rectangleInputs">
+        <label>長</label>：
+        <input type="number" id="length" placeholder="請输入長度" />
+        <label>寬</label>：
+        <input type="number" id="width" placeholder="請输入寬度" />
+      </div>
+      <div id="triangleInputs">
+        <label>底</label>：
+        <input type="number" id="base" placeholder="請输入底" />
+        <label>高</label>：
+        <input type="number" id="height" placeholder="請输入高" />
+      </div>
+    </div>
+    <button id="submitBtn5">計算面積</button>
+    <div id="result5">面積:</div>
+
+    <script>
+      //QA1
+      const buttonElement = document.getElementById("submitBtn");
+      buttonElement.addEventListener("click", function () {
+        const math = {
+          Price: document.getElementById("price").value,
+          fee: 30,
+          discount: 0.8,
+          total: function () {
+            return this.Price * this.discount + this.fee;
+          },
+        };
+        console.log(math.total());
+        const Result = math.total();
+        console.log(Result);
+        document.getElementById("result").textContent = Result + "元";
+      });
+
+      // Q2
+      // 取資料
+      var buttonElement2 = document.getElementById("submitBtn2");
+      buttonElement2.addEventListener("click", function () {
+        const product1Price = document.getElementById("product1Price").value;
+        const product1Quantity =
+          document.getElementById("product1Quantity").value;
+        const product2Price = document.getElementById("product2Price").value;
+        const product2Quantity =
+          document.getElementById("product2Quantity").value;
+        // 存物件
+        const data2 = {
+          product1Price,
+          product1Quantity,
+          product2Price,
+          product2Quantity,
+        };
+        console.log(data2);
+
+        var result2 =
+          product1Price * product1Quantity + product2Price * product2Quantity;
+        console.log(result2);
+        document.getElementById("result2").textContent = result2;
+      });
+
+      //Q3
+
+      var buttonElement3 = document.getElementById("submitBtn3");
+      buttonElement3.addEventListener("click", function () {
+        const weight3 = document.getElementById("weight3").value;
+        const hight3 = document.getElementById("hight3").value;
+        const bmi = weight3 / (hight3 * hight3);
+        const BMI = bmi.toFixed(1);
+
+        const data3 = {
+          weight3,
+          hight3,
+          BMI,
+        };
+        if (BMI < 18.5) {
+          document.getElementById("result3").textContent = data3.BMI + "偏瘦";
+          console.log(data3.BMI + "偏瘦");
+        } else if (18.5 <= BMI < 24) {
+          document.getElementById("result3").textContent = data3.BMI + "正常";
+          console.log(data3.BMI + "正常");
+        } else if (24 <= BMI < 28) {
+          document.getElementById("result3").textContent = data3.BMI + "肥胖";
+          console.log(data3.BMI + "肥胖");
+        } else if (BMI >= 28) {
+          document.getElementById("result3").textContent = data3.BMI + "過胖";
+          console.log(data3.BMI + "肥胖");
+        }
+      });
+
+      // Q4
+      var buttonElement4 = document.getElementById("submitBtn4");
+      buttonElement4.addEventListener("click", function () {
+        const food = document.getElementById("food").value;
+        const transport = document.getElementById("transport").value;
+        const play = document.getElementById("play").value;
+        const data4 = {
+          food: food,
+          transport: transport,
+          play: play,
+        };
+
+        const total4 = food + transport + play;
+        console.log(typeof total4);
+      });
+      // 為什麼變字串相加
+
+      //Q5
+      const buttonElement5 = document.getElementById("submitBtn4");
+      buttonElement5.addEventListener("click", function () {
+        const radius = document.getElementById("radius").value;
+      });
+    </script>
   </body>
 </html>

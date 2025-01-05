@@ -112,12 +112,23 @@ TwobuttonElement.addEventListener("click", function () {
     text: text,
     Agent: Agent,
     Reason: reason,
+    doSomeThing: function () {
+      console.log(this.Name);
+    },
   };
 
-  var myJson = JSON.stringify(Data);
-  localStorage.setItem("EIPData", myJson);
+  Data.doSomeThing = Data.doSomeThing.toString();
+
+  console.log(Data);
+
+  var myJson = JSON.stringify(Data); //轉字串
+  localStorage.setItem("EIPData", myJson); //轉完存進去localStorage
   // console.log(myJson);
-  var JsEipData = JSON.parse(myJson);
-  localStorage.getItem(JsEipData);
+  var JsEipData = JSON.parse(myJson); //轉物件
+  JsEipData.doSomeThing = new Function("return " + JsEipData.doSomeThing)();
+  localStorage.getItem(JsEipData); //轉完從localStorage 拿出來
+  console.log(JsEipData.doSomeThing);
   console.log("JsEipData", JsEipData);
 });
+
+var book = function () {};
